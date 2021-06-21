@@ -70,7 +70,7 @@ def calculation_of_income(json_data, data, bot_level: str) -> int:
             total_amount += position_volume * \
                 json_data[item]['bot_level'][bot_level] * \
                 json_data[item]['price_use_junk_shop']
-            # Uncomment the line below to print the sum of each item in console
+            """Uncomment the line below to print the sum of each item in console"""
             text = position_volume * \
                 json_data[item]['bot_level'][bot_level] * \
                 json_data[item]['price_use_junk_shop']
@@ -82,10 +82,10 @@ def sum_per_hour(text: str, total_amount: Decimal) -> Decimal:
     """
     Сalculates the average rate of return per hour
     """
-    # Serch count days
+    """Serch count days"""
     count_days = re.findall(r"\d+(?=д)", text)
 
-    # Serch count hours
+    """Serch count hours"""
     count_hours = re.findall(r"\d+(?=ч)", text)
     if not count_days:
         formula = Decimal(count_hours.pop())
